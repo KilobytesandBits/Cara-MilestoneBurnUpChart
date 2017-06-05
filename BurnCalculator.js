@@ -55,7 +55,7 @@ Ext.define('Rally.example.BurnCalculator', {
 				if (index <= endIndex) {
 					var acceptedSeriesData = _.pluck(seriesData, 'Completed');
 					var slope = (acceptedSeriesData[0] - acceptedSeriesData[endIndex]) / (0 - endIndex);
-					return index * slope;
+					return ((index * slope) + acceptedSeriesData[0]);
 				}
 			},
 			display : 'line'
